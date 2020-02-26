@@ -12,9 +12,11 @@ namespace ExcelWriter
     {
         static void Main(string[] args)
         {
-            string filePath = "C:\\Users\\3D Infotech.3DCA-LY520-12\\Desktop\\Example.xlsx";
-
-            /*
+            string excelFilePath = "C:\\Users\\3D Infotech.3DCA-LY520-12\\Desktop\\Example.xlsx";
+            string txtFilePath = "C:\\Users\\3D Infotech.3DCA-LY520-12\\Desktop\\Test.txt";
+            // Command line argument section
+            #region Command line
+            /* 
             if (args.Length < 1)
             {
                 Console.WriteLine("Error, no arguments passed.");
@@ -31,9 +33,21 @@ namespace ExcelWriter
                 return;
             }
             */
+            #endregion Command line
+
+
+            // Read in text file section
+            #region Text File
+
+            // Open text file and read all lines
+            string[] lines = File.ReadAllLines(txtFilePath);
+            int startLine = 24;
+            
+
+            #endregion
 
             //create a fileinfo object of an excel file on the disk (file must exist)
-            FileInfo file = new FileInfo(filePath);
+            FileInfo file = new FileInfo(excelFilePath);
 
             //create a new Excel package from the file
             using (ExcelPackage excelPackage = new ExcelPackage(file))
@@ -55,9 +69,19 @@ namespace ExcelWriter
                 string valA1 = firstWorksheet.Cells["A1"].Value.ToString();
                 string valB1 = firstWorksheet.Cells[1, 2].Value.ToString();
 
+                // Parse String
+                for (int i = 0; i < lines.Length; ++i)
+                {
+                    string[] words = lines[i].Split(',');
+                    for (int j = 0; j < words.Length; ++j)
+                    {
+                        firstWorksheet.Cells[startLine + i, j+1].Value = words[j];
+                        
+                    }
+                }
+
                 //add some data
-                firstWorksheet.Cells[4, 1].Value = "Added data in Cell A4";
-                firstWorksheet.Cells[4, 2].Value = "Added data in Cell B4";
+                //firstWorksheet.Cells[24, 2].Value = "Added data in Cell B4";
 
                 //save the changes
                 excelPackage.Save();
@@ -65,7 +89,6 @@ namespace ExcelWriter
 
         }
 
-        
 
     }
 }
