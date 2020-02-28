@@ -1,1 +1,22 @@
 16:17:03,934 [1] INFO - Writing to worksheet, starting at row: 15000
+12:37:39,023 [1] INFO - Number of arguments passed for this execution: 5
+12:37:39,041 [1] INFO - Arg #0: C:\Users\3D
+12:37:39,048 [1] INFO - Arg #1: Infotech.3DCA-LY520-12\Desktop\Test.txt
+12:37:39,054 [1] INFO - Arg #2: C:\Users\3D
+12:37:39,058 [1] INFO - Arg #3: Infotech.3DCA-LY520-12\Desktop\Example.xlsx
+12:37:39,064 [1] INFO - Arg #4: 12
+12:37:39,069 [1] ERROR - Third parameter is not an integer value.
+12:37:39,073 [1] ERROR - File does not exist or path invalid: C:\Users\3D
+12:44:13,224 [1] INFO - Number of arguments passed for this execution: 3
+12:44:13,239 [1] INFO - Arg #1: C:\Users\3D Infotech.3DCA-LY520-12\Desktop\Test.txt
+12:44:13,267 [1] INFO - Arg #2: C:\Users\3D Infotech.3DCA-LY520-12\Desktop\Example.xlsx
+12:44:13,274 [1] INFO - Arg #3: 12
+12:50:10,896 [1] INFO - Number of arguments passed for this execution: 3
+12:50:10,912 [1] INFO - Arg #1: C:\\Users\\3D Infotech.3DCA-LY520-12\\Desktop\\Test.txt
+12:50:10,921 [1] INFO - Arg #2: C:\\Users\\3D Infotech.3DCA-LY520-12\\Desktop\\Example.xlsx
+12:50:10,928 [1] INFO - Arg #3: 12
+12:51:11,427 [1] INFO - Number of arguments passed for this execution: 3
+12:51:11,444 [1] INFO - Arg #1: C:\Users\3D Infotech.3DCA-LY520-12\Desktop\Example.xlsx
+12:51:11,451 [1] INFO - Arg #2: C:\Users\3D Infotech.3DCA-LY520-12\Desktop\Test.txt
+12:51:11,459 [1] INFO - Arg #3: 12
+12:51:11,658 [1] INFO - Writing to worksheet, starting at row: 13

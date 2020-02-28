@@ -10,3 +10,4 @@ C:\Users\3D Infotech.3DCA-LY520-12\source\repos\ExcelWriter\ExcelWriter\obj\Debu
 C:\Users\3D Infotech.3DCA-LY520-12\source\repos\ExcelWriter\ExcelWriter\obj\Debug\ExcelWriter.csproj.CopyComplete
 C:\Users\3D Infotech.3DCA-LY520-12\source\repos\ExcelWriter\ExcelWriter\obj\Debug\ExcelWriter.exe
 C:\Users\3D Infotech.3DCA-LY520-12\source\repos\ExcelWriter\ExcelWriter\obj\Debug\ExcelWriter.pdb
+C:\Users\3D Infotech.3DCA-LY520-12\source\repos\ExcelWriter\ExcelWriter\obj\Debug\ExcelWriter.csprojAssemblyReference.cache

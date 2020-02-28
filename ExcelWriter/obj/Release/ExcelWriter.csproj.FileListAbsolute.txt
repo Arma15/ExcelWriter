@@ -5,9 +5,8 @@ C:\Users\3D Infotech.3DCA-LY520-12\source\repos\ExcelWriter\ExcelWriter\bin\Rele
 C:\Users\3D Infotech.3DCA-LY520-12\source\repos\ExcelWriter\ExcelWriter\bin\Release\log4net.dll
 C:\Users\3D Infotech.3DCA-LY520-12\source\repos\ExcelWriter\ExcelWriter\bin\Release\EPPlus.xml
 C:\Users\3D Infotech.3DCA-LY520-12\source\repos\ExcelWriter\ExcelWriter\bin\Release\log4net.xml
+C:\Users\3D Infotech.3DCA-LY520-12\source\repos\ExcelWriter\ExcelWriter\obj\Release\ExcelWriter.Properties.Resources.resources
+C:\Users\3D Infotech.3DCA-LY520-12\source\repos\ExcelWriter\ExcelWriter\obj\Release\ExcelWriter.csproj.GenerateResource.cache
 C:\Users\3D Infotech.3DCA-LY520-12\source\repos\ExcelWriter\ExcelWriter\obj\Release\ExcelWriter.csproj.CopyComplete
 C:\Users\3D Infotech.3DCA-LY520-12\source\repos\ExcelWriter\ExcelWriter\obj\Release\ExcelWriter.exe
 C:\Users\3D Infotech.3DCA-LY520-12\source\repos\ExcelWriter\ExcelWriter\obj\Release\ExcelWriter.pdb
-C:\Users\3D Infotech.3DCA-LY520-12\source\repos\ExcelWriter\ExcelWriter\obj\Release\ExcelWriter.Properties.Resources.resources
-C:\Users\3D Infotech.3DCA-LY520-12\source\repos\ExcelWriter\ExcelWriter\obj\Release\ExcelWriter.csproj.GenerateResource.cache
-C:\Users\3D Infotech.3DCA-LY520-12\source\repos\ExcelWriter\ExcelWriter\obj\Release\ExcelWriter.csprojAssemblyReference.cache
