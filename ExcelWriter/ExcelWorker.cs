@@ -16,7 +16,7 @@ namespace ExcelWriter
         private static readonly int[] _skipPositions = { 4, 5, 15, 16, 17, 18 };
         private static readonly int _maxColumn = 22;
         private static string WO = "";
-        private static readonly string dataFile = "WODetails.txt";
+        private static readonly string dataFile = "WoDetails.txt";
         private static int _startLineOffset
         {
             get
@@ -206,11 +206,11 @@ namespace ExcelWriter
                         sw.WriteLine($"Customer={customer}");
                         sw.WriteLine($"Heat={heat}");
                         sw.WriteLine($"AlloyGrade={alloyGrade}");
-                        sw.WriteLine($"AllowHeatTreatCondition{alloyHeatTreat}");
-                        sw.WriteLine($"FinalSTDimension{finalST}");
-                        sw.WriteLine($"STTolerance{stTolerance}");
-                        sw.WriteLine($"FinalLTDimension{finalLT}");
-                        sw.WriteLine($"LTTolerance{ltTolerance}");
+                        sw.WriteLine($"AllowHeatTreatCondition={alloyHeatTreat}");
+                        sw.WriteLine($"FinalSTDimension={finalST}");
+                        sw.WriteLine($"STTolerance={stTolerance}");
+                        sw.WriteLine($"FinalLTDimension={finalLT}");
+                        sw.WriteLine($"LTTolerance={ltTolerance}");
                         sw.WriteLine($"FinalLength={finalLength}");
                         sw.WriteLine($"LengthTolerance={lengthTolerance}");
                     }
