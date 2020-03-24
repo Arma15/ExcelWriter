@@ -25,7 +25,7 @@ namespace ExcelWriter
             }
             set
             {
-                Properties.Settings.Default.LastUsedRow = value;
+                Properties.Settings.Default.LastUsedRow = value > 30000 ? 15 : value;
                 Properties.Settings.Default.Save();
             }
         }
@@ -63,17 +63,10 @@ namespace ExcelWriter
             string excelFilePath = args[0];
             string txtFilePath = args[1];
 
-            // This is to capture the optional third parameter
-            if (args.Length > 3)
+            // This is to capture the optional third parameter, Work order number
+            if (args.Length > 2)
             {
-                if (Int32.TryParse(args[2], out int num))
-                {
-                    _startLineOffset = num;
-                }
-                else
-                {
-                    _log.Error("Third parameter is not an integer value.");
-                }
+                WO = args[2];
             }
 
             if (!File.Exists(excelFilePath))
@@ -180,10 +173,19 @@ namespace ExcelWriter
                 {
                     int lineNum = 1;
                     // Find line that has work order number on it
-                    while (secondWorksheet.Cells[lineNum, 1].Value.ToString() != WO)
+                    try
                     {
-                        ++lineNum;
+                        while (secondWorksheet.Cells[lineNum, 1].Value.ToString() != WO)
+                        {
+                            ++lineNum;
+                        }
                     }
+                    catch (Exception ex)
+                    {
+                        _log.Error($"Exception: {ex.Message.ToString()}");
+                    }
+                    // Find line that has work order number on it
+                    
 
                     // Read data from that row
                     string dueDate = secondWorksheet.Cells["G" + lineNum.ToString()].Value.ToString();

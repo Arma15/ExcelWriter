@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
-    <StartArguments>"C:\Users\3D Infotech.3DCA-LY520-12\Desktop\Example.xlsx" "C:\Users\3D Infotech.3DCA-LY520-12\Desktop\Test.txt" 12</StartArguments>
+    <StartArguments>C:\\Users\\kflor\\OneDrive\\Desktop\\Example.xlsx C:\\Users\\kflor\\OneDrive\\Desktop\\Test.txt 15</StartArguments>
   </PropertyGroup>
   <PropertyGroup>
     <PublishUrlHistory>publish\</PublishUrlHistory>
@@ -12,5 +12,8 @@
     <ErrorReportUrlHistory />
     <FallbackCulture>en-US</FallbackCulture>
     <VerifyUploadedFiles>false</VerifyUploadedFiles>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
+    <StartArguments>C:\\Users\\kflor\\OneDrive\\Desktop\\Example.xlsx C:\\Users\\kflor\\OneDrive\\Desktop\\Test.txt</StartArguments>
   </PropertyGroup>
 </Project>
