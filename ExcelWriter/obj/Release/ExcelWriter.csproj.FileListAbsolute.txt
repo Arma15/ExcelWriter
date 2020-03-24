@@ -17,7 +17,6 @@ C:\Users\kflor\source\repos\ExcelWriter\ExcelWriter\ExcelWriter\bin\Release\EPPl
 C:\Users\kflor\source\repos\ExcelWriter\ExcelWriter\ExcelWriter\bin\Release\log4net.dll
 C:\Users\kflor\source\repos\ExcelWriter\ExcelWriter\ExcelWriter\bin\Release\EPPlus.xml
 C:\Users\kflor\source\repos\ExcelWriter\ExcelWriter\ExcelWriter\bin\Release\log4net.xml
-C:\Users\kflor\source\repos\ExcelWriter\ExcelWriter\ExcelWriter\obj\Release\ExcelWriter.csprojAssemblyReference.cache
 C:\Users\kflor\source\repos\ExcelWriter\ExcelWriter\ExcelWriter\obj\Release\ExcelWriter.Properties.Resources.resources
 C:\Users\kflor\source\repos\ExcelWriter\ExcelWriter\ExcelWriter\obj\Release\ExcelWriter.csproj.GenerateResource.cache
 C:\Users\kflor\source\repos\ExcelWriter\ExcelWriter\ExcelWriter\obj\Release\ExcelWriter.csproj.CopyComplete
