@@ -25,7 +25,7 @@ namespace ExcelWriter
             }
             set
             {
-                Properties.Settings.Default.LastUsedRow = value > 30000 ? 15 : value;
+                Properties.Settings.Default.LastUsedRow = value > 30000 ? 12 : value;
                 Properties.Settings.Default.Save();
             }
         }
@@ -112,7 +112,7 @@ namespace ExcelWriter
             }
 
             #region Create Excel library object
-            //create a new Excel package from the file
+            // Create a new Excel package from the file
             ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
             using (ExcelPackage excelPackage = new ExcelPackage(file))
             {
@@ -122,7 +122,7 @@ namespace ExcelWriter
                     return;
                 }
 
-                //Get a WorkSheet by index. Note that EPPlus indexes are base 1, not base 0!
+                // Get a WorkSheet by index. Note that EPPlus indexes start at 1
                 ExcelWorksheet firstWorksheet = excelPackage.Workbook.Worksheets["DataEntry"];
                 ExcelWorksheet secondWorksheet = excelPackage.Workbook.Worksheets["WoStat"];
 
@@ -139,7 +139,7 @@ namespace ExcelWriter
                 for (int textFileLine = 0; textFileLine < lines.Length; ++textFileLine)
                 {
                     string[] words = lines[textFileLine].Split(',');
-                    if (words.Length > 2)
+                    if (words.Length > 2 && WO == "")
                     {
                         WO = words[2];
                     }
@@ -175,46 +175,44 @@ namespace ExcelWriter
                     // Find line that has work order number on it
                     try
                     {
+                        // Find line that has work order number on it
                         while (secondWorksheet.Cells[lineNum, 1].Value.ToString() != WO)
                         {
                             ++lineNum;
+                        }
+                        // Read data from that row
+                        string dueDate = secondWorksheet.Cells["G" + lineNum.ToString()].Value.ToString();
+                        string customer = secondWorksheet.Cells["CS" + lineNum.ToString()].Value.ToString();
+                        string heat = secondWorksheet.Cells["CT" + lineNum.ToString()].Value.ToString();
+                        string alloyGrade = secondWorksheet.Cells["EG" + lineNum.ToString()].Value.ToString();
+                        string alloyHeatTreat = secondWorksheet.Cells["EH" + lineNum.ToString()].Value.ToString();
+                        string finalST = secondWorksheet.Cells["EI" + lineNum.ToString()].Value.ToString();
+                        string stTolerance = secondWorksheet.Cells["EJ" + lineNum.ToString()].Value.ToString();
+                        string finalLT = secondWorksheet.Cells["EK" + lineNum.ToString()].Value.ToString();
+                        string ltTolerance = secondWorksheet.Cells["EL" + lineNum.ToString()].Value.ToString();
+                        string finalLength = secondWorksheet.Cells["EM" + lineNum.ToString()].Value.ToString();
+                        string lengthTolerance = secondWorksheet.Cells["EN" + lineNum.ToString()].Value.ToString();
+                        
+                        // Write data to text file
+                        using (StreamWriter sw = new StreamWriter(Path.GetDirectoryName(txtFilePath) + "\\" + dataFile))
+                        {
+                            // Enter required data to textfile
+                            sw.WriteLine($"DueDate={dueDate}");
+                            sw.WriteLine($"Customer={customer}");
+                            sw.WriteLine($"Heat={heat}");
+                            sw.WriteLine($"AlloyGrade={alloyGrade}");
+                            sw.WriteLine($"AllowHeatTreatCondition={alloyHeatTreat}");
+                            sw.WriteLine($"FinalSTDimension={finalST}");
+                            sw.WriteLine($"STTolerance={stTolerance}");
+                            sw.WriteLine($"FinalLTDimension={finalLT}");
+                            sw.WriteLine($"LTTolerance={ltTolerance}");
+                            sw.WriteLine($"FinalLength={finalLength}");
+                            sw.WriteLine($"LengthTolerance={lengthTolerance}");
                         }
                     }
                     catch (Exception ex)
                     {
                         _log.Error($"Exception: {ex.Message.ToString()}");
-                    }
-                    // Find line that has work order number on it
-                    
-
-                    // Read data from that row
-                    string dueDate = secondWorksheet.Cells["G" + lineNum.ToString()].Value.ToString();
-                    string customer = secondWorksheet.Cells["CS" + lineNum.ToString()].Value.ToString();
-                    string heat = secondWorksheet.Cells["CT" + lineNum.ToString()].Value.ToString();
-                    string alloyGrade = secondWorksheet.Cells["EG" + lineNum.ToString()].Value.ToString();
-                    string alloyHeatTreat = secondWorksheet.Cells["EH" + lineNum.ToString()].Value.ToString();
-                    string finalST = secondWorksheet.Cells["EI" + lineNum.ToString()].Value.ToString();
-                    string stTolerance = secondWorksheet.Cells["EJ" + lineNum.ToString()].Value.ToString();
-                    string finalLT = secondWorksheet.Cells["EK" + lineNum.ToString()].Value.ToString();
-                    string ltTolerance = secondWorksheet.Cells["EL" + lineNum.ToString()].Value.ToString();
-                    string finalLength = secondWorksheet.Cells["EM" + lineNum.ToString()].Value.ToString();
-                    string lengthTolerance = secondWorksheet.Cells["EN" + lineNum.ToString()].Value.ToString();
-
-                    // Write data to text file
-                    using (StreamWriter sw = new StreamWriter(Path.GetDirectoryName(txtFilePath) + "\\" +  dataFile))
-                    {
-                        // Enter required data to textfile
-                        sw.WriteLine($"DueDate={dueDate}");
-                        sw.WriteLine($"Customer={customer}");
-                        sw.WriteLine($"Heat={heat}");
-                        sw.WriteLine($"AlloyGrade={alloyGrade}");
-                        sw.WriteLine($"AllowHeatTreatCondition={alloyHeatTreat}");
-                        sw.WriteLine($"FinalSTDimension={finalST}");
-                        sw.WriteLine($"STTolerance={stTolerance}");
-                        sw.WriteLine($"FinalLTDimension={finalLT}");
-                        sw.WriteLine($"LTTolerance={ltTolerance}");
-                        sw.WriteLine($"FinalLength={finalLength}");
-                        sw.WriteLine($"LengthTolerance={lengthTolerance}");
                     }
                 }
 
