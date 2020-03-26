@@ -1,0 +1,9 @@
+10:20:27,128 [1] INFO - Number of arguments passed for this execution: 3
+10:20:27,133 [1] INFO - Arg #1: C:\\Users\\kflor\\OneDrive\\Desktop\\Example.xlsx
+10:20:27,133 [1] INFO - Arg #2: C:\\Users\\kflor\\OneDrive\\Desktop\\Test.txt
+10:20:27,133 [1] INFO - Arg #3: 7025
+10:21:14,042 [1] INFO - Writing to worksheet, starting at row: 15296
+10:21:14,045 [1] ERROR - Index: 3 was expected to be a double value, inserted instead as a text value
+10:21:14,045 [1] ERROR - Index: 4 was expected to be a double value, inserted instead as a text value
+10:21:14,046 [1] ERROR - Index: 12 was expected to be a double value, inserted instead as a text value
+10:21:14,046 [1] ERROR - Index: 13 was expected to be a double value, inserted instead as a text value
